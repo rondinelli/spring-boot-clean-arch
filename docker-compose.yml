@@ -1,0 +1,31 @@
+version: '3.5'
+
+services:
+  stt-soluction:
+    ports:
+      - "9090:8080"
+    build: .
+    depends_on:
+      - stt-db
+    environment:
+      - PROFILE=dev
+
+  stt-db:
+    image: postgres:14.1-alpine
+    restart: always
+    ports:
+      - "5333:5432"
+    volumes:
+      - stt-db-volume:/var/lib/postgresql/data
+
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=transcode-service
+
+volumes:
+  stt-db-volume:
+
+networks:
+  default:
+    name: backend-network-admin

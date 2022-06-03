@@ -1,0 +1,19 @@
+package com.stt.solution.domain.exceptions;
+
+public enum ErrorCode {
+    NOT_FOUND,
+    MAX_LICENSE,
+    REPEATED,
+    EXPIRED,
+    EMAIL_ERROR,
+    EMAIL_INACTIVATE,
+    INCORRECT_VALUES,
+    PROHIBITED_ACTION,
+    USER_INACTIVATED,
+    TERMS_PRIVACY,
+    PAYMENT_INITIATED,
+    DURATION_EXCEED,
+    CHECKOUT_ERROR,
+    DATE_ERROR,
+    REGISTERED
+}
